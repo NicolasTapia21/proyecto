@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mensaje de Amor</title>
+<style>
+  body {
+    font-family: 'Brush Script MT', cursive;
+    background-color: #6827b3;
+    color: rgb(64, 194, 194);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #boton img {
+    width: 50px;
+    height: auto;
+  }
+  #mensaje {
+    display: none;
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  #reproductor {
+    display: none;
+    font-size: 1em;
+    margin-top: 20px;
+  }
+  #imagenCancion img {
+    width: 100px; /* Tamaño reducido para la imagen */
+    height: 100px; /* Altura ajustada para hacerla circular */
+    border-radius: 50%; /* Esto hará que la imagen sea circular */
+    object-fit: cover; /* Esto asegurará que la imagen cubra el área sin distorsionarse */
+    display: block; /* Asegura que la imagen se muestre */
+    margin-bottom: 20px; /* Margen para separar del mensaje */
+  }
+  @keyframes latido {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+</head>
+<body>
+
+<button id="boton" onclick="mostrarMensaje()">
+  <img src="boton.png" alt="Botón">
+</button>
+
+<div id="mensaje">
+    ❤️Querida mamá y papa, su amor y dedicación son nustro mayor inspiración. 
+    Gracias por enseñarnos el verdadero significado del amor y la bondad No hay suficientes palabras para expresar nuestro agradecimiento hacia ustedes.
+     Gracias por hacernos sentir siempre amados y valorados❤️
+</div>
+
+<div id="imagenCancion">
+  <img src="mama y papa.jpeg" alt="Imagen de la Canción">
+</div>
+
+<audio id="reproductor" controls>
+  <source src="Gustavo Elis - No Me Dejes Solo  Video Oficial.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
+<script>
+function mostrarMensaje() {
+  document.getElementById('boton').style.display = 'none';
+  document.getElementById('mensaje').style.display = 'block';
+  document.getElementById('imagenCancion').style.display = 'block';
+  document.getElementById('reproductor').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
