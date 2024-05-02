@@ -4,16 +4,19 @@
 <meta charset="UTF-8">
 <title>Mensaje de Amor</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
   body {
-    font-family: 'Brush Script MT', cursive;
-    background-color: #6827b3;
-    color: rgb(64, 194, 194);
+    font-family: 'Dancing Script', cursive; /* Fuente actualizada */
+    background-color: #FFC0CB;
+    color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    text-align: center; /* Asegura que el texto esté centrado */
   }
   #boton img {
     width: 50px;
@@ -30,12 +33,26 @@
     margin-top: 20px;
   }
   #imagenCancion img {
-    width: 100px; /* Tamaño reducido para la imagen */
-    height: 100px; /* Altura ajustada para hacerla circular */
-    border-radius: 50%; /* Esto hará que la imagen sea circular */
-    object-fit: cover; /* Esto asegurará que la imagen cubra el área sin distorsionarse */
-    display: block; /* Asegura que la imagen se muestre */
-    margin-bottom: 20px; /* Margen para separar del mensaje */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .globo {
+    width: 50px; /* Tamaño de la imagen del globo */
+    height: auto;
+    animation: flotar 5s infinite; /* Animación para flotar */
+    position: absolute; /* Posicionamiento absoluto para colocarlos al lado del reproductor */
+  }
+  @keyframes flotar {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
   @keyframes latido {
     0% {
@@ -48,6 +65,24 @@
       transform: scale(1);
     }
   }
+  /* Estilo para las imágenes de corazón */
+  .corazon {
+    width: 50px; /* Ajusta al tamaño deseado */
+    height: auto;
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 10px; /* Posición desde la parte inferior */
+    animation: deslizar 5s linear infinite; /* Animación para deslizar */
+  }
+
+  /* Animación para mover los corazones de lado a lado */
+  @keyframes deslizar {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100px); /* Ajusta la distancia de deslizamiento */
+    }
+  }
 </style>
 </head>
 <body>
@@ -57,9 +92,9 @@
 </button>
 
 <div id="mensaje">
-    ❤️Querida mamá y papa, su amor y dedicación son nustro mayor inspiración. 
-    Gracias por enseñarnos el verdadero significado del amor y la bondad No hay suficientes palabras para expresar nuestro agradecimiento hacia ustedes.
-     Gracias por hacernos sentir siempre amados y valorados❤️
+    ❤️Querida mamá, tu amor es como un abrazo cálido que nos envuelve en cada momento.
+     Gracias por ser nuestra guía, nuestro refugio y nuestro mayor apoyo.
+     Te amamos más de lo que las palabras pueden expresar.❤️
 </div>
 
 <div id="imagenCancion">
@@ -70,6 +105,16 @@
   <source src="Gustavo Elis - No Me Dejes Solo  Video Oficial.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
+
+<!-- Imágenes de globos flotantes al lado del reproductor -->
+<img class="globo" src="globo.png" alt="Globo" style="right: 120px; top: 50px;">
+<img class="globo" src="globo.png" alt="Globo" style="right: 80px; top: 100px;">
+<img class="globo" src="globo.png" alt="Globo" style="right: 40px; top: 150px;">
+
+<!-- Imágenes de corazón flotantes en la parte inferior del texto -->
+<img class="corazon" src="globo 2.png" alt="Corazón" style="left: 50px;">
+<img class="corazon" src="globo 2.png" alt="Corazón" style="left: 150px;">
+<img class="corazon" src="globo 2.png" alt="Corazón" style="left: 250px;">
 
 <script>
 function mostrarMensaje() {
